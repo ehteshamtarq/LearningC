@@ -4,7 +4,8 @@ int main(){
     int c, nl;
     nl = 0;
 
-    while((c == getchar()) != EOF){
+    while((c = getchar()) != EOF){
+        printf("%c", &c);
         if (c == '\n')
             nl++;
     }

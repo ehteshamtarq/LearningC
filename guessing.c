@@ -3,10 +3,10 @@
 int main(){
     int guess;
     while(scanf("%d", &guess) != EOF){
-        if(!isdigit(guess)){
-            printf("Not Number");
-            break;
-        }
+        // if(!isdigit(guess)){
+        //     printf("Not Number");
+        //     break;
+        // }
         if (guess == 42){
             printf("Nice work!\n");
             break;

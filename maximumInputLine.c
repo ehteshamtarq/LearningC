@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 #define MAXLINE 1000 /* maximum input line size */
+int get_line(char s[], int lim);
+int copy(char s1[], char s2[]);
 
 main() /* find longest line */
 {
@@ -19,24 +21,17 @@ main() /* find longest line */
         printf("%s", save);
 }
 
-get_line(s, lim) /* get line into s, return length */
-char s[];
-int lim;
+int get_line(char s[], int lim) /* get line into s, return length */
 {
     int c, i;
 
     for (i=0; i<lim-1 && (c=getchar())!=EOF && c!='\n'; ++i)
         s[i] = c;
-    if (c == '\n') {
-        s[i] = c;
-        ++i;
-    }
     s[i] = '\0';
     return(i);
 }
 
-copy(s1, s2) /* copy s1 to s2; assume s2 big enough */
-char s1[], s2[];
+int copy(char s1[], char s2[]) /* copy s1 to s2; assume s2 big enough */
 {
     int i;
 
