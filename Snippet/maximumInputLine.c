@@ -2,7 +2,7 @@
 
 #define MAXLINE 1000 /* maximum input line size */
 int get_line(char s[], int lim);
-int copy(char s1[], char s2[]);
+void copy(char s1[], char s2[]);
 
 main() /* find longest line */
 {
@@ -31,7 +31,7 @@ int get_line(char s[], int lim) /* get line into s, return length */
     return(i);
 }
 
-int copy(char s1[], char s2[]) /* copy s1 to s2; assume s2 big enough */
+void copy(char s1[], char s2[]) /* copy s1 to s2; assume s2 big enough */
 {
     int i;
 

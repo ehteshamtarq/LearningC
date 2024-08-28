@@ -9,26 +9,30 @@ void copy(char *from, char *to);
 
 int main() /* find longest line */
 {
-    int len; /* current line length */
-    int max; /* maximum length seen so far */
-    char *line; /* current input line */
-    char *save; /* longest line, saved */
+    int len;             /* current line length */
+    int max;             /* maximum length seen so far */
+    char *line;          /* current input line */
+    char *save;          /* longest line, saved */
     int limit = MAXLINE; /* initial limit for line length */
 
     line = (char *)malloc(limit * sizeof(char));
     save = (char *)malloc(limit * sizeof(char));
-    if (line == NULL || save == NULL) {
+    if (line == NULL || save == NULL)
+    {
         printf("Memory allocation failed\n");
         return 1;
     }
 
     max = 0;
-    while ((len = get_line(&line, &limit)) > 0) {
-        if (len > max) {
+    while ((len = get_line(&line, &limit)) > 0)
+    {
+        if (len > max)
+        {
             max = len;
-            free(save); // Free the previous longest line
+            free(save);                                      // Free the previous longest line
             save = (char *)malloc((len + 1) * sizeof(char)); // Allocate memory for the new longest line
-            if (save == NULL) {
+            if (save == NULL)
+            {
                 printf("Memory allocation failed\n");
                 return 1;
             }
@@ -48,18 +52,22 @@ int get_line(char **line, int *limit) /* get line into s, return length */
     int c, i;
     int current_limit = *limit;
 
-    for (i = 0; (c = getchar()) != EOF && c != '\n'; ++i) {
-        if (i >= current_limit - 1) {
+    for (i = 0; (c = getchar()) != EOF && c != '\n'; ++i)
+    {
+        if (i >= current_limit - 1)
+        {
             current_limit *= 2; // Double the size
             *line = (char *)realloc(*line, current_limit * sizeof(char));
-            if (*line == NULL) {
+            if (*line == NULL)
+            {
                 printf("Memory allocation failed\n");
                 exit(1);
             }
         }
         (*line)[i] = c;
     }
-    if (c == '\n') {
+    if (c == '\n')
+    {
         (*line)[i] = c;
         ++i;
     }
