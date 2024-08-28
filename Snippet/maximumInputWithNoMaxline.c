@@ -66,11 +66,6 @@ int get_line(char **line, int *limit) /* get line into s, return length */
         }
         (*line)[i] = c;
     }
-    if (c == '\n')
-    {
-        (*line)[i] = c;
-        ++i;
-    }
     (*line)[i] = '\0';
     *limit = current_limit;
     return i;
