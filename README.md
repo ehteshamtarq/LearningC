@@ -8,4 +8,3 @@
  - `char **` is a pointer to a `char *`, meaning it points to a pointer that in turn points to a `char`.
  - `'x'` is not the same as `"x"`. The former is an integer, used to produce the numeric
 value of the letter x in the machine's character set. The latter is an array of characters that
-contains one character (the letter x) and a `'\0'`.
